@@ -1,0 +1,18 @@
+root@bat48655:/home/bat48655# mongo --quiet
+> show dbs;
+admin   0.000GB
+config  0.000GB
+local   0.000GB
+mydb    0.000GB
+> use mydb;
+switched to db mydb
+> db.createCollection("users")
+{ "ok" : 1 }
+> show collections;
+mycal
+users
+> db.users.insert({"name":"soumo"});
+WriteResult({ "nInserted" : 1 })
+> db.users.find();
+{ "_id" : ObjectId("5e5619d01a4c3eeff9fec71a"), "name" : "soumo" }
+> 
